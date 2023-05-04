@@ -1,0 +1,34 @@
+{
+  "name": "pharmacy",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "prettier:fix": "prettier --write .",
+    "eslint": "eslint -c .eslintrc.js --ext .ts,.tsx",
+    "stylelint": "stylelint \"src/**/*/*.{ts, tsx}\""
+  },
+  "dependencies": {
+    "expo": "~48.0.15",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-native": "0.71.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@types/react": "~18.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "eslint": "^8.39.0",
+    "postcss-styled-syntax": "^0.4.0",
+    "prettier": "^2.8.8",
+    "styled-components": "^5.3.10",
+    "stylelint": "^15.6.1",
+    "stylelint-config-standard": "^33.0.0",
+    "typescript": "^4.9.4"
+  },
+  "private": true
+}
