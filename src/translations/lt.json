@@ -1,0 +1,41 @@
+{
+  "tabs": {
+    "home": "Pradžia",
+    "test": "Test"
+  },
+  "pages": {
+    "addNewMedication": {
+      "title": "Pridėti naują vaistą",
+      "fields": {
+        "name": "Vaisto pavadinimas",
+        "description": "Aprašymas",
+        "category": "Kategorija",
+        "amount": "Kiekis",
+        "expired": "Pasibaigęs",
+        "diagnosis": "Diagnozė",
+        "choose": "Pasirinkite"
+      }
+    },
+    "medicationsList": {
+      "title": "Vaistų sąrašas",
+      "search": "Ieškoti"
+    },
+    "activeMedicationsList": {
+      "title": "Turimi vaistai"
+    },
+    "inactiveMedicationsList": {
+      "title": "Buvę vaistai"
+    },
+    "antibioticsList": {
+      "title": "Antibiotikai"
+    }
+  },
+  "categories": {
+    "ANALGESICS": "Analgetikai",
+    "THROAT_PAIN": "Gerklei",
+    "DIGESTIVE": "Virškinimui",
+    "VITAMINS": "Vitaminai",
+    "ANTIBIOTICS": "Antibiotikai",
+    "FEVER": "Karščiavimas"
+  }
+}
