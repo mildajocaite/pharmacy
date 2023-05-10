@@ -1,38 +1,41 @@
 import React, { FC } from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Pages } from "../../services/navigation-service";
+import { HomePageTabs } from "../../services/navigation-service";
 import { translations } from "../../translations";
-import { AddButton } from "./add-button";
 import { ActiveMedicationsList } from "../medications-list/active-medications-list";
 import { InactiveMedicationsList } from "../medications-list/inactive-medications-list";
 import { AntibioticsList } from "../medications-list/antibiotics-list";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { colorWhite } from "../../style/colors";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 export const Home: FC = () => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    initialRouteName={HomePageTabs.ACTIVE_MEDICATIONS_LIST}
+    barStyle={{ backgroundColor: colorWhite }}
+  >
     <Tab.Screen
-      name={Pages.ACTIVE_MEDICATIONS_LIST}
+      name={HomePageTabs.ACTIVE_MEDICATIONS_LIST}
       component={ActiveMedicationsList}
       options={{
         title: translations.pages.activeMedicationsList.title,
-        headerRight: () => <AddButton />,
+        tabBarIcon: "emoticon-sick",
       }}
     />
     <Tab.Screen
-      name={Pages.INACTIVE_MEDICATIONS_LIST}
+      name={HomePageTabs.INACTIVE_MEDICATIONS_LIST}
       component={InactiveMedicationsList}
       options={{
         title: translations.pages.inactiveMedicationsList.title,
-        headerRight: () => <AddButton />,
+        tabBarIcon: "pill",
       }}
     />
     <Tab.Screen
-      name={Pages.ANTIBIOTICS_LIST}
+      name={HomePageTabs.ANTIBIOTICS_LIST}
       component={AntibioticsList}
       options={{
         title: translations.pages.antibioticsList.title,
-        headerRight: () => <AddButton />,
+        tabBarIcon: "bacteria",
       }}
     />
   </Tab.Navigator>

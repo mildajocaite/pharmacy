@@ -12,9 +12,12 @@
         "category": "Kategorija",
         "amount": "Kiekis",
         "expired": "Pasibaigęs",
-        "diagnosis": "Diagnozė",
-        "choose": "Pasirinkite"
-      }
+        "diagnosis": "Skirta gydyti",
+        "image": "Nuotrauka",
+        "choose": "Pasirinkite",
+        "uploadImage": "Įkelti paveikslėlį"
+      },
+      "submit": "Sukurti"
     },
     "medicationsList": {
       "title": "Vaistų sąrašas",
@@ -28,7 +31,22 @@
     },
     "antibioticsList": {
       "title": "Antibiotikai"
+    },
+    "medicationDetails": {
+      "quantity": "Kiekis",
+      "removeModal": {
+        "title": "Ar tikrai norite ištrinti?",
+        "yes": "Taip",
+        "no": "Ne"
+      }
     }
+  },
+  "pageHeaderTitles": {
+    "HOME": "Pagrindinis",
+    "CREATE_NEW_MEDICATION": "Pridėti naują vaistą",
+    "ACTIVE_MEDICATIONS_LIST": "Turimų vaistų sąrašas",
+    "INACTIVE_MEDICATIONS_LIST": "Pasibaigusių vaistų sąrašas",
+    "ANTIBIOTICS_LIST": "Antibiotikai"
   },
   "categories": {
     "ANALGESICS": "Analgetikai",

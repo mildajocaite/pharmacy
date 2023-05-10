@@ -1,32 +1,24 @@
 import React, { FC } from "react";
-import { Item } from "../../model/item";
-import {
-  StyledCard,
-  StyledContent,
-  StyledSubtitle,
-  StyledTitle,
-} from "./list-item.styled";
-import { AntDesign } from "@expo/vector-icons";
-import { colorGrey } from "../../style/colors";
+import { Medication } from "../../model/medication";
 import { renderIcon } from "./icon-mapper";
+import { StyledCard } from "./list-item.styled";
+import { IconRight } from "./icon-right";
 
 interface Props {
-  item: Item;
+  medication: Medication;
 }
 
 export const ListItem: FC<Props> = (props) => {
   const {
-    item: { title, category, diagnosis },
+    medication: { id, title, category, diagnosis },
   } = props;
 
   return (
-    <StyledCard>
-      {renderIcon(category)}
-      <StyledContent>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledSubtitle>{diagnosis}</StyledSubtitle>
-      </StyledContent>
-      <AntDesign name="right" size={24} color={colorGrey} />
-    </StyledCard>
+    <StyledCard
+      title={title}
+      subtitle={diagnosis}
+      left={() => renderIcon(category)}
+      right={() => <IconRight id={id} />}
+    />
   );
 };

@@ -1,6 +1,7 @@
 export interface Translations {
   tabs: Tabs;
   pages: Pages;
+  pageHeaderTitles: PageHeaderTitles;
   categories: Categories;
 }
 export interface Tabs {
@@ -13,10 +14,12 @@ export interface Pages {
   activeMedicationsList: ActiveMedicationsListOrInactiveMedicationsListOrAntibioticsList;
   inactiveMedicationsList: ActiveMedicationsListOrInactiveMedicationsListOrAntibioticsList;
   antibioticsList: ActiveMedicationsListOrInactiveMedicationsListOrAntibioticsList;
+  medicationDetails: MedicationDetails;
 }
 export interface AddNewMedication {
   title: string;
   fields: Fields;
+  submit: string;
 }
 export interface Fields {
   name: string;
@@ -25,7 +28,9 @@ export interface Fields {
   amount: string;
   expired: string;
   diagnosis: string;
+  image: string;
   choose: string;
+  uploadImage: string;
 }
 export interface MedicationsList {
   title: string;
@@ -33,6 +38,22 @@ export interface MedicationsList {
 }
 export interface ActiveMedicationsListOrInactiveMedicationsListOrAntibioticsList {
   title: string;
+}
+export interface MedicationDetails {
+  quantity: string;
+  removeModal: RemoveModal;
+}
+export interface RemoveModal {
+  title: string;
+  yes: string;
+  no: string;
+}
+export interface PageHeaderTitles {
+  HOME: string;
+  CREATE_NEW_MEDICATION: string;
+  ACTIVE_MEDICATIONS_LIST: string;
+  INACTIVE_MEDICATIONS_LIST: string;
+  ANTIBIOTICS_LIST: string;
 }
 export interface Categories {
   ANALGESICS: string;

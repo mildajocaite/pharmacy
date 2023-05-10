@@ -1,17 +1,17 @@
 import React, { FC, useState } from "react";
-import { Item } from "../../model/item";
+import { Medication } from "../../model/medication";
 import { ListItem } from "./list-item";
 import { FlatList, ListRenderItemInfo } from "react-native";
 import { translations } from "../../translations";
 import { StyledList, StyledSearchBar } from "./medications-list.styled";
 
 interface Props {
-  items: Item[];
+  medications: Medication[];
 }
 
 export const MedicationsList: FC<Props> = (props) => {
-  const { items } = props;
-  const [search, setSearch] = useState<string>();
+  const { medications } = props;
+  const [search, setSearch] = useState<string>("");
 
   return (
     <StyledList>
@@ -19,14 +19,15 @@ export const MedicationsList: FC<Props> = (props) => {
         onChangeText={setSearch}
         value={search}
         underlineColorAndroid="transparent"
+        mode="bar"
         placeholder={translations.pages.medicationsList.search}
       />
       <FlatList
-        data={items.filter((item) =>
+        data={medications.filter((item) =>
           search ? item.title.includes(search) : item
         )}
-        renderItem={(info: ListRenderItemInfo<Item>) => (
-          <ListItem item={info.item} />
+        renderItem={(info: ListRenderItemInfo<Medication>) => (
+          <ListItem medication={info.item} />
         )}
       />
     </StyledList>

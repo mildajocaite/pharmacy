@@ -1,9 +1,15 @@
 import React, { FC } from "react";
 import { MedicationsList } from "./medications-list";
-import { items } from "../../static/items";
+import { useSelector } from "react-redux";
+import { MedicationUtils } from "../../utils/medication-utils";
+import { getMedications } from "../../redux/medication-selector";
 
 export const InactiveMedicationsList: FC = () => {
-  // const items = useSelector(getItems);
+  const medications = useSelector(getMedications);
 
-  return <MedicationsList items={items.filter((item) => item.expired)} />;
+  return (
+    <MedicationsList
+      medications={MedicationUtils.filterExpiredMedications(medications)}
+    />
+  );
 };

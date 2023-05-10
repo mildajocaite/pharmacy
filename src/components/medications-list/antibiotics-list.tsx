@@ -1,14 +1,19 @@
 import React, { FC } from "react";
 import { MedicationsList } from "./medications-list";
-import { items } from "../../static/items";
 import { Category } from "../../model/category";
+import { MedicationUtils } from "../../utils/medication-utils";
+import { useSelector } from "react-redux";
+import { getMedications } from "../../redux/medication-selector";
 
 export const AntibioticsList: FC = () => {
-  // const items = useSelector(getItems);
+  const medications = useSelector(getMedications);
 
   return (
     <MedicationsList
-      items={items.filter((item) => item.category === Category.ANTIBIOTICS)}
+      medications={MedicationUtils.filterByCategory(
+        medications,
+        Category.ANTIBIOTICS
+      )}
     />
   );
 };
