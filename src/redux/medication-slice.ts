@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { MedicationState } from "./medication-state";
 import { Medication } from "../model/medication";
+import { MedicationUtils } from "../utils/medication-utils";
 
 const initialState: MedicationState = {
   medications: [],
@@ -10,11 +11,11 @@ export const medicationSlice = createSlice({
   name: "medication",
   initialState,
   reducers: {
-    setMedications(
-      state: MedicationState,
-      action: PayloadAction<Medication[]>
-    ) {
-      state.medications = action.payload;
+    addMedication(state: MedicationState, action: PayloadAction<Medication>) {
+      state.medications = [
+        ...state.medications,
+        { ...action.payload, id: MedicationUtils.getNewId(state.medications) },
+      ];
     },
     removeMedication(state: MedicationState, action: PayloadAction<number>) {
       state.medications = state.medications.filter(
@@ -29,5 +30,5 @@ export const medicationSlice = createSlice({
   },
 });
 
-export const { setMedications, removeMedication, editMedication } =
+export const { addMedication, removeMedication, editMedication } =
   medicationSlice.actions;

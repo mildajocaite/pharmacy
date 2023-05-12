@@ -20,4 +20,9 @@ export class MedicationUtils {
     (() => {
       throw new Error(`Item ${id} doesn't exist`);
     })();
+
+  public static readonly getNewId = (medications: Medication[]) =>
+    medications.length
+      ? Math.max(...medications.map((medication) => medication.id)) + 1
+      : 0;
 }
