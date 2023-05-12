@@ -18,7 +18,6 @@ export const ImageUpload: FC<Props> = (props) => {
 
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 1,
     });
 
     if (!result.canceled) {

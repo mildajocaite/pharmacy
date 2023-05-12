@@ -21,7 +21,13 @@ export const medicationSlice = createSlice({
         (medication) => medication.id !== action.payload
       );
     },
+    editMedication(state: MedicationState, action: PayloadAction<Medication>) {
+      state.medications = state.medications.map((medication) =>
+        medication.id === action.payload.id ? action.payload : medication
+      );
+    },
   },
 });
 
-export const { setMedications, removeMedication } = medicationSlice.actions;
+export const { setMedications, removeMedication, editMedication } =
+  medicationSlice.actions;

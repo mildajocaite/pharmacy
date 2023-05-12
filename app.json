@@ -1,28 +1,36 @@
 {
   "expo": {
-    "name": "pharmarcy",
+    "name": "Vaistinėlė",
     "slug": "pharmarcy",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/vitamins.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/vitamins.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.milda.pharmarcy"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/vitamins.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5af53072-fbdd-4561-8f06-7a9238413dfd"
+      }
     }
   }
 }

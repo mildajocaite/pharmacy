@@ -20,6 +20,7 @@ export interface AddNewMedication {
   title: string;
   fields: Fields;
   submit: string;
+  update: string;
 }
 export interface Fields {
   name: string;

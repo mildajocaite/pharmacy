@@ -24,7 +24,9 @@ export const MedicationsList: FC<Props> = (props) => {
       />
       <FlatList
         data={medications.filter((item) =>
-          search ? item.title.includes(search) : item
+          search
+            ? item.title.includes(search) || item.diagnosis.includes(search)
+            : item
         )}
         renderItem={(info: ListRenderItemInfo<Medication>) => (
           <ListItem medication={info.item} />

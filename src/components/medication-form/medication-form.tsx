@@ -8,34 +8,25 @@ import {
   StyledSwitch,
   StyledTextInput,
   StyledView,
-} from "./create-medication-form.styled";
-import { useDispatch, useSelector } from "react-redux";
+} from "./medication-form.styled";
 import { Medication } from "../../model/medication";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { translations } from "../../translations";
 import DropDown from "react-native-paper-dropdown";
-import { Pages } from "../../services/navigation-service";
-import { setMedications } from "../../redux/medication-slice";
-import { getMedications } from "../../redux/medication-selector";
-import { RootStackParamList } from "../../app-screens";
 import { ImageUpload } from "../image-upload/image-upload";
 
-export const CreateMedicationForm: FC = () => {
-  const dispatch = useDispatch();
-  const medications = useSelector(getMedications);
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+interface Props {
+  initialValues: Partial<Medication>;
+  onSubmit: (values: Medication) => void;
+  buttonLabel: string;
+}
+
+export const MedicationForm: FC<Props> = (props) => {
+  const { initialValues, onSubmit, buttonLabel } = props;
   const [showDropDown, setShowDropDown] = useState(false);
   const [showAmount, setShowAmount] = useState(true);
-  const { control, handleSubmit, setValue, getValues } = useForm<Medication>({
-    defaultValues: {
-      expired: false,
-    },
+  const { control, handleSubmit } = useForm<Medication>({
+    defaultValues: initialValues,
   });
-
-  const onSubmit = (data: Medication) => {
-    dispatch(setMedications([...medications, data]));
-    navigation.navigate(Pages.HOME);
-  };
 
   return (
     <StyledView>
@@ -126,7 +117,7 @@ export const CreateMedicationForm: FC = () => {
             onChangeText={onChange}
             multiline
             numberOfLines={6}
-            maxLength={60}
+            maxLength={600}
             onBlur={onBlur}
           />
         )}
@@ -139,7 +130,7 @@ export const CreateMedicationForm: FC = () => {
         )}
       />
       <StyledButton mode="contained" onPress={handleSubmit(onSubmit)}>
-        {translations.pages.addNewMedication.submit}
+        {buttonLabel}
       </StyledButton>
     </StyledView>
   );

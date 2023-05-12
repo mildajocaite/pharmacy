@@ -17,7 +17,8 @@
         "choose": "Pasirinkite",
         "uploadImage": "Įkelti paveikslėlį"
       },
-      "submit": "Sukurti"
+      "submit": "Sukurti",
+      "update": "Atnaujinti"
     },
     "medicationsList": {
       "title": "Vaistų sąrašas",
