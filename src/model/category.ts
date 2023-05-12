@@ -5,4 +5,5 @@ export enum Category {
   VITAMINS = "VITAMINS",
   ANTIBIOTICS = "ANTIBIOTICS",
   FEVER = "FEVER",
+  OTHER = "OTHER",
 }
